@@ -1,0 +1,4 @@
+[submodule "win-support"]
+	path = win-support
+	url = https://github.com/FilipeGouveia/GCC-Win-SATSolvers-Support.git
+	branch = master

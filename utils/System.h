@@ -41,14 +41,20 @@ extern double memUsedPeak();        // Peak-memory in mega bytes (returns 0 for 
 //-------------------------------------------------------------------------------------------------
 // Implementation of inline functions:
 
-#if defined(_MSC_VER) || defined(__MINGW32__)
+#if defined(_MSC_VER)
 #include <time.h>
 
 static inline double Glucose::cpuTime(void) { return (double)clock() / CLOCKS_PER_SEC; }
 
 #else
 #include <sys/time.h>
+
+#if defined(__MINGW32__)
+#include "../GCC-Win-SATSolvers-Support/sys/my_resource.h"
+#else
 #include <sys/resource.h>
+#endif
+
 #include <unistd.h>
 
 static inline double Glucose::cpuTime(void) {
