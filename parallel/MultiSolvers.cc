@@ -75,7 +75,7 @@ BoolOption opt_dontExportDirectReusedClauses(_cunstable, "reusedClauses", "Don't
 BoolOption opt_plingeling(_cunstable, "plingeling", "plingeling strategy for sharing clauses (exploratory feature)", false);
 
 #include <sys/time.h>
-#include <sys/resource.h>
+//#include <sys/resource.h> //TODO: check if it is needed
 #include <unistd.h>
 
 

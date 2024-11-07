@@ -51,13 +51,21 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 
 #include <signal.h>
 #include <zlib.h>
-#include <sys/resource.h>
+
+// #if !defined(_MSC_VER) && !defined(__MINGW32__)
+// #include <sys/resource.h>
+// #endif
 
 #include "utils/System.h"
 #include "utils/ParseUtils.h"
 #include "utils/Options.h"
 #include "core/Dimacs.h"
 #include "simp/SimpSolver.h"
+
+#if defined(_MSC_VER) || defined(__MINGW32__)
+#include "../win-support/my_signal.h" //for SIGXCPU
+#include "../win-support/my_limits.h" //for rlimit, getrlimit and setrlimit
+#endif
 
 using namespace Glucose;
 

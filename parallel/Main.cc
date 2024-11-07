@@ -63,6 +63,11 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 #include "parallel/ParallelSolver.h"
 #include "parallel/MultiSolvers.h"
 
+#if defined(_MSC_VER) || defined(__MINGW32__)
+#include "../win-support/my_signal.h" //for SIGXCPU
+#include "../win-support/my_limits.h" //for rlimit, getrlimit and setrlimit
+#endif
+
 using namespace Glucose;
 
 

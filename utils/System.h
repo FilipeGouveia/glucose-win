@@ -50,7 +50,7 @@ static inline double Glucose::cpuTime(void) { return (double)clock() / CLOCKS_PE
 #include <sys/time.h>
 
 #if defined(__MINGW32__)
-#include "../GCC-Win-SATSolvers-Support/sys/my_resource.h"
+#include "../win-support/sys/my_resource.h"
 #else
 #include <sys/resource.h>
 #endif

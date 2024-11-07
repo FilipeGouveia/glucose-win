@@ -55,6 +55,11 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 #include "core/Constants.h"
 #include"simp/SimpSolver.h"
 
+#if defined(_MSC_VER) || defined(__MINGW32__)
+//HACK for putc_unlocked
+#include "../win-support/my_other.h"
+#endif
+
 using namespace Glucose;
 
 
